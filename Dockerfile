@@ -1,9 +1,14 @@
-FROM gradle:7.4.0-jdk17
+FROM gradle:9.2.1-jdk17 AS build
 
 WORKDIR /app
 
-COPY /app .
+COPY . .
 
 RUN gradle installDist
 
-CMD ./build/install/spring-boot-project-99/bin/spring-boot-project-99
+FROM eclipse-temurin:17-jre
+WORKDIR /app
+
+COPY --from=build /app/build/install/spring-boot-project-99 ./app
+
+CMD ["./app/bin/spring-boot-project-99"]
