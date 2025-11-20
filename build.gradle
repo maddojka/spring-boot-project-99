@@ -6,7 +6,7 @@ plugins {
 	id 'checkstyle'
 }
 
-group = 'hexlet.code.app'
+group = 'hexlet.code'
 version = '0.0.1-SNAPSHOT'
 description = 'hexlet task manager'
 
