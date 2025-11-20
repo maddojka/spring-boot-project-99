@@ -22,6 +22,7 @@ sonar {
 	properties {
 		property "sonar.projectKey", "maddojka_spring-boot-project-99"
 		property "sonar.organization", "maddojka"
+		property("sonar.host.url", "https://sonarcloud.io")
 	}
 }
 
